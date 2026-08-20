@@ -17,13 +17,21 @@
                                   :sha "c416dd96dfefc251d0c66eb87999fb258f7ad315"}}
 
  :aliases
- {;; override langgraph-clj's transitive langchain-clj — langgraph-clj itself
-  ;; still pins the old v0.1.0/ae475c9 tag, which predates the kotoba-conn*
-  ;; read/write-scope split (kotoba-lang/langchain#5, merged 8b25753). Drop
-  ;; this override once langgraph-clj's own pin advances past that commit.
-  :dev {:override-deps {io.github.com-junkawasaki/langchain-clj
-                         {:git/url "https://github.com/kotoba-lang/langchain.git"
-                          :git/sha "8b25753f12643be51e3697400ed1541d97990304"}}}
+ {;; :dev used to override langgraph's transitive langchain, because langgraph
+  ;; pinned a revision predating the kotoba-conn* read/write-scope split
+  ;; (kotoba-lang/langchain#5, merged 8b25753), and the comment here said to
+  ;; drop the override once langgraph's own pin advanced past that commit.
+  ;; It has: langgraph now pins langchain 52bca7b (2026-08-17), and 8b25753
+  ;; (2026-07-01) is an ancestor of it. The override was also inert -- it named
+  ;; io.github.com-junkawasaki/langchain-clj, and the repository is
+  ;; kotoba-lang/langchain, which langgraph names by the canonical coordinate.
+  ;; tools.deps keys on the SYMBOL, so the override matched nothing; measured
+  ;; with `clojure -Stree -M:dev:test`, which showed langchain at 52bca7b.
+  ;; Renaming the key would not have fixed it either -- it would have made a
+  ;; six-week downgrade suddenly live. So the entry is removed, as its own
+  ;; comment instructed. The alias itself stays: README and CLAUDE.md invoke
+  ;; `-M:dev:run` and `-M:dev:test`.
+  :dev {}
 
   :run  {:main-opts ["-m" "tsumugu.sim"]}
 
