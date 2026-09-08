@@ -9,7 +9,7 @@
   This ns keeps only what is *about Spirit in Physics*: the Nei light/embodied
   focal rule, the 静寂→serene emotion table, the 事務所→:schwa-office location
   map. Word-budget + STYLE-FIRST composition stay in the commons."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [kami.mangaka.render :as km]))
 
 (def ^:private nei-light-cues
@@ -21,8 +21,8 @@
   panel's prose. Light-form for pod/awakening/abstract beats; embodied
   otherwise."
   [{:keys [description emotion colorNote location]}]
-  (let [blob (str/lower-case (str description " " emotion " " colorNote " " location))]
-    (if (some #(str/includes? blob (str/lower-case %)) nei-light-cues) :nei-light :nei)))
+  (let [blob (str/lower (str description " " emotion " " colorNote " " location))]
+    (if (some #(str/includes? blob (str/lower %)) nei-light-cues) :nei-light :nei)))
 
 (defn focal-character
   "One character per panel: the first dialogue speaker if in the cast, else
@@ -30,7 +30,7 @@
   beats. nil if none."
   [panel]
   (let [chars (:characters panel)
-        sp    (some-> (first (:dialogue panel)) :speaker str str/lower-case keyword)
+        sp    (some-> (first (:dialogue panel)) :speaker str str/lower keyword)
         pick  (or (some #{sp} chars) (first chars))]
     (when pick (if (= pick :nei) (nei-form panel) pick))))
 

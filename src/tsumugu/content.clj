@@ -12,7 +12,7 @@
   isn't checked out."
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def ip-root
   (or (System/getenv "SIP_IP_ROOT")

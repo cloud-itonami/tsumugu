@@ -12,7 +12,7 @@
   tsumugu is depth-1 self-sovereign: it always connects with `:identity`
   (never a handed :token), self-minting a `:cap/transact` CACAO scoped to its
   own graph — no owner hand-off, no shared secret."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [langchain.kotoba-db :as kdb]
             [tsumugu.cacao :as cacao]
             [tsumugu.store :as store])
@@ -27,7 +27,7 @@
   [{:keys [url method headers body]}]
   (let [b (HttpRequest/newBuilder (URI/create url))]
     (doseq [[k v] headers] (.header b k v))
-    (let [req  (-> b (.method (str/upper-case (name (or method :post)))
+    (let [req  (-> b (.method (str/upper (name (or method :post)))
                              (if body
                                (HttpRequest$BodyPublishers/ofString body)
                                (HttpRequest$BodyPublishers/noBody)))
