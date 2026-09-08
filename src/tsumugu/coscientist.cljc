@@ -18,7 +18,7 @@
   network I/O — the actual image-gen render happens only after the tournament
   picks a winner) so the panel ledger is content-addressable and the
   tournament is reproducible."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.set :as set]
             [kami.mangaka.render :as km]
             [tsumugu.render :as render]))
