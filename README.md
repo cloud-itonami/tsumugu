@@ -74,17 +74,17 @@ clojure -M:lint        # clj-kondo (errors fail)
 
 | File | Role |
 |---|---|
-| `src/tsumugu/cacao.clj` | Self-sovereign identity — Ed25519 → did:key → `canonical-graph(did, db-name)`. CACAO mint ported from `itonami.cacao`; graph derivation ported from `kotobase.cid` (byte-identical to the kotobase.net edge). |
-| `src/tsumugu/kotoba.clj` | Wires a `tsumugu.store/DatomicStore` to a kotoba-server pod (kotobase.net), self-minting its own CACAO. Ported from `itonami.kotoba`. |
-| `src/tsumugu/store.cljc` | `Store` protocol — MemStore (default) ‖ DatomicStore (in-process EAVT, or kotoba-server via `:db-api` swap). |
-| `src/tsumugu/content.clj` | Reads chapters/storyboards from `org-spirit-in-physics-comics` ($SIP_IP_ROOT). Mirrors `sip.storyboard`. |
-| `src/tsumugu/render.clj` | Work-specific composition mappers (Nei light/embodied, emotion table, location map) over the `kami.mangaka.render` commons. Mirrors `sip.render`. |
-| `src/tsumugu/coscientist.cljc` | Generate → review (charter gates) → Elo rank → evolve → meta-review. Ported from `com-etzhayyim-ibuki`'s `methods/coscientist.cljc`. |
-| `src/tsumugu/mangallm.cljc` | The contained intelligence node — wraps the coscientist tournament into an `Advisor` (proposal only). |
-| `src/tsumugu/policy.cljc` | PolicyGovernor — no-surviving-candidate / confidence-floor / high-stakes-layout checks. |
-| `src/tsumugu/phase.cljc` | 0→2 rollout gate (read-only → assisted → supervised-auto). |
-| `src/tsumugu/operation.cljc` | The StateGraph: intake → advise → govern → decide → commit \| hold \| request-approval. |
-| `src/tsumugu/sim.cljc` | Demo runner. |
+| `src/tsumugu/cacao.kotoba` | Self-sovereign identity — Ed25519 → did:key → `canonical-graph(did, db-name)`. CACAO mint ported from `itonami.cacao`; graph derivation ported from `kotobase.cid` (byte-identical to the kotobase.net edge). |
+| `src/tsumugu/kotoba.kotoba` | Wires a `tsumugu.store/DatomicStore` to a kotoba-server pod (kotobase.net), self-minting its own CACAO. Ported from `itonami.kotoba`. |
+| `src/tsumugu/store.kotoba` | `Store` protocol — MemStore (default) ‖ DatomicStore (in-process EAVT, or kotoba-server via `:db-api` swap). |
+| `src/tsumugu/content.kotoba` | Reads chapters/storyboards from `org-spirit-in-physics-comics` ($SIP_IP_ROOT). Mirrors `sip.storyboard`. |
+| `src/tsumugu/render.kotoba` | Work-specific composition mappers (Nei light/embodied, emotion table, location map) over the `kami.mangaka.render` commons. Mirrors `sip.render`. |
+| `src/tsumugu/coscientist.kotoba` | Generate → review (charter gates) → Elo rank → evolve → meta-review. Ported from `com-etzhayyim-ibuki`'s `methods/coscientist.cljc`. |
+| `src/tsumugu/mangallm.kotoba` | The contained intelligence node — wraps the coscientist tournament into an `Advisor` (proposal only). |
+| `src/tsumugu/policy.kotoba` | PolicyGovernor — no-surviving-candidate / confidence-floor / high-stakes-layout checks. |
+| `src/tsumugu/phase.kotoba` | 0→2 rollout gate (read-only → assisted → supervised-auto). |
+| `src/tsumugu/operation.kotoba` | The StateGraph: intake → advise → govern → decide → commit \| hold \| request-approval. |
+| `src/tsumugu/sim.kotoba` | Demo runner. |
 
 ## Status
 
