@@ -26,4 +26,4 @@ ledger fact.
   (documented in each namespace's docstring), not shared as a runtime
   dependency, so tsumugu's own dependency footprint stays self-contained
   (containment applies to deps, not just the intelligence node).
-- `clojure -M:lint` (clj-kondo, errors fail) / `clojure -M:dev:test`.
+- `kbb -M:lint` (clj-kondo, errors fail) / `kbb -M:dev:test`.

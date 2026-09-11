@@ -65,9 +65,9 @@ tsumugu's own graph, addressing it the same way tsumugu itself does.
 ## Run
 
 ```bash
-clojure -M:dev:run     # demo: 3 panels through one OperationActor + backend swap
-clojure -M:dev:test    # cacao crypto · store parity · coscientist tournament · operation contract
-clojure -M:lint        # clj-kondo (errors fail)
+kbb -M:dev:run     # demo: 3 panels through one OperationActor + backend swap
+kbb -M:dev:test    # cacao crypto · store parity · coscientist tournament · operation contract
+kbb -M:lint        # clj-kondo (errors fail)
 ```
 
 ## Layout
@@ -88,7 +88,7 @@ clojure -M:lint        # clj-kondo (errors fail)
 
 ## Status
 
-23 tests, 62 assertions, green (`clojure -M:dev:test`). Identity (graph =
+23 tests, 62 assertions, green (`kbb -M:dev:test`). Identity (graph =
 `canonical-graph(did, db-name)`, byte-identical to the kotobase.net edge —
 verified against `kotobase.cid-test`'s own test vector), store (Mem ≡
 Datomic parity), content-read (verified against all 62 real chapters),
@@ -130,7 +130,7 @@ fixed two real protocol bugs along the way (both now merged/PR'd upstream):
 and deployed** (`wrangler deploy` to `kotobase-cf-wasm-staging` /
 `kotobase.aozora.app`) — writes with real (brace-containing) payloads
 currently still silently no-op on the live edge until then. Re-run
-`clojure -M:dev -e` against `tsumugu.kotoba/kotoba-store` once deployed to
+`kbb -M:dev -e` against `tsumugu.kotoba/kotoba-store` once deployed to
 confirm end-to-end.
 
 **Not yet implemented** (tracked follow-ups): the actual

@@ -31,7 +31,7 @@
   ;; io.github.com-junkawasaki/langchain-clj, and the repository is
   ;; kotoba-lang/langchain, which langgraph names by the canonical coordinate.
   ;; tools.deps keys on the SYMBOL, so the override matched nothing; measured
-  ;; with `clojure -Stree -M:dev:test`, which showed langchain at 52bca7b.
+  ;; with `kbb -Stree -M:dev:test`, which showed langchain at 52bca7b.
   ;; Renaming the key would not have fixed it either -- it would have made a
   ;; six-week downgrade suddenly live. So the entry is removed, as its own
   ;; comment instructed. The alias itself stays: README and CLAUDE.md invoke
