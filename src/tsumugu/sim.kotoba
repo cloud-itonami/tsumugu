@@ -8,7 +8,7 @@
     op2  第1話 01-13b（対話パネル）        → phase 2 なら policy-clean auto-commit
     op3  存在しないパネルID                → coscientist tournament 不成立 → hold
 
-  Run: clojure -M:dev:run"
+  Run: kbb -M:dev:run"
   (:require [langgraph.graph :as g]
             [kami.mangaka.render :as km]
             [tsumugu.content :as content]
