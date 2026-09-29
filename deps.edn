@@ -1,6 +1,6 @@
 ;; com-etzhayyim-tsumugu — Spirit in Physics (Ghost Hacker universe) manga
 ;; publishing actor. StateGraph containment + governor + append-only ledger
-;; (CLAUDE.md "Actors"), self-sovereign kotoba-server identity (no owner
+;; (AGENTS.md "Actors"), self-sovereign kotoba-server identity (no owner
 ;; hand-off), co-scientist quality loop before any panel/page commits.
 {:paths ["src"]
 
@@ -34,7 +34,7 @@
   ;; with `kbb -Stree -M:dev:test`, which showed langchain at 52bca7b.
   ;; Renaming the key would not have fixed it either -- it would have made a
   ;; six-week downgrade suddenly live. So the entry is removed, as its own
-  ;; comment instructed. The alias itself stays: README and CLAUDE.md invoke
+  ;; comment instructed. The alias itself stays: README and AGENTS.md invoke
   ;; `-M:dev:run` and `-M:dev:test`.
   :dev {}
 
