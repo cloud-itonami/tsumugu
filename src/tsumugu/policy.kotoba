@@ -44,7 +44,7 @@
         ;; then dropped. That old read was always nil, so this high-stakes
         ;; escalation could never fire -- a splash/full-page panel could
         ;; auto-commit with zero human review, contradicting this file's
-        ;; own docstring and the repo's CLAUDE.md invariant. :layout/:size
+        ;; own docstring and the repo's AGENTS.md invariant. :layout/:size
         ;; are now surfaced directly on the proposal (mangallm.cljc).
         stakes? (boolean (or (contains? high-stakes-layouts (:layout proposal))
                              (contains? high-stakes-layouts (:size proposal))))

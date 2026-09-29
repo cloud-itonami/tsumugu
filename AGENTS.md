@@ -1,7 +1,7 @@
 # com-etzhayyim-tsumugu
 
 Spirit in Physics (Ghost Hacker universe) manga publishing actor. See
-`README.md` for the core contract and full-repo `../../../CLAUDE.md`
+`README.md` for the core contract and full-repo `../../../AGENTS.md`
 "Actors" section for the pattern this follows (containment + independent
 governor + append-only ledger). Decision record:
 `../../../90-docs/adr/2607011500-ghosthacker-sip-atproto-actor.md`.
