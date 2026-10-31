@@ -20,10 +20,16 @@
         ;; deps.edn had not been updated to follow, so it still pointed at the
         ;; now-orphaned kami-engine subtree copies. Same fix already applied to
         ;; kami-app-sip's deps.edn (ADR-2607022800 :post-rename-dep-fixes).
-        gftd/kami-mangaka-render {:git/url "https://github.com/kotoba-lang/kami-mangaka-render.git"
-                                  :sha "2122c2a66c617d05bab21ed423b47b1956f826d3"}
-        gftd/kami-mangaka-page   {:git/url "https://github.com/kotoba-lang/kami-mangaka-page.git"
-                                  :sha "c416dd96dfefc251d0c66eb87999fb258f7ad315"}}
+        ;; Both then moved into the kotoba monorepo (JUN-649):
+        ;; lib/kotoba.kamiMangakaRender and lib/kotoba.kamiMangakaPage. The
+        ;; standalone kami-mangaka-page repo is archived; kami-mangaka-render no
+        ;; longer resolves on GitHub.
+        gftd/kami-mangaka-render {:git/url "https://github.com/kotoba-lang/kotoba.git"
+                                  :git/sha "64ba9e2e6459e7244ca52945b7b010489d07a008"
+                                  :deps/root "lib/kotoba.kamiMangakaRender"}
+        gftd/kami-mangaka-page   {:git/url "https://github.com/kotoba-lang/kotoba.git"
+                                  :git/sha "64ba9e2e6459e7244ca52945b7b010489d07a008"
+                                  :deps/root "lib/kotoba.kamiMangakaPage"}}
 
  :aliases
  {;; :dev used to override langgraph's transitive langchain, because langgraph
